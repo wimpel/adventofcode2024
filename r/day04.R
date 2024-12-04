@@ -1,5 +1,6 @@
 library(stringr)
-input <- readLines("./input/day04_sample.txt")
+library(data.table)
+#input <- readLines("./input/day04_sample.txt")
 input <- readLines("./input/day04.txt")
 
 # part 1
