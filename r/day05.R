@@ -1,6 +1,6 @@
 library(data.table)
 library(quickcode)
-inputfile <- "./input/day05_sample.txt"
+# inputfile <- "./input/day05_sample.txt"
 inputfile <- "./input/day05.txt"
 input_divide <- which(readLines(inputfile) == "")
 rules <- fread(inputfile, nrows = input_divide - 1, col.names = c("print", "before"))
@@ -30,7 +30,7 @@ repaired <- sapply(errors, function(x) {
   x <- rev(x[!is.na(x)])
   for (i in 1:(length(x) - 1)) {
     repeat {
-      error_found <- tail(intersect(x[(i+1):length(x)],rules[print == x[i], ]$before), 1)
+      error_found <- tail(intersect(x[(i+1):length(x)], rules[print == x[i], ]$before), 1)
       if (length(error_found) < 1) break
       x_new <- append(x[-i], x[i], after = which(x == error_found) - 1)
       x <- x_new
