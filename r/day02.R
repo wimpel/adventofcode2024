@@ -18,7 +18,7 @@ sum(sapply(transpose(DT), function(x) {
 }))
 
 # part 2 BRUTE FORCE
-sapply(transpose(DT), function(x) {
+sapply(data.table::transpose(DT), function(x) {
   #x <- transpose(DT)[[1]]
   x <- x[!is.na(x)]
    if (test1(x) & test2(x)) {

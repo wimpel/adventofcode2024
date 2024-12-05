@@ -3,6 +3,7 @@ library(data.table)
 #input <- readLines("./input/day04_sample.txt")
 input <- readLines("./input/day04.txt")
 
+input <- readLines("./input/aoc-2024-day-04-challenge-1.txt")
 # part 1
 m <- strsplit(input, "") |>
   unlist() |> 
