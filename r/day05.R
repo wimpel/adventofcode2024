@@ -1,7 +1,8 @@
 library(data.table)
 library(quickcode)
 # inputfile <- "./input/day05_sample.txt"
-inputfile <- "./input/day05.txt"
+#inputfile <- "./input/day05.txt"
+inputfile <- "./input/aoc-2024-day-05-challenge-2.txt"
 input_divide <- which(readLines(inputfile) == "")
 rules <- fread(inputfile, nrows = input_divide - 1, col.names = c("print", "before"))
 updates <- fread(inputfile, skip = input_divide, fill = TRUE)
