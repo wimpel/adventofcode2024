@@ -33,6 +33,7 @@ mygrid <- sf::st_make_grid(final.sf, n = ncol(m), cellsize = 1) |>
   sf::st_as_sf() |>
   cbind(final)
 # split by group
+plot(mygrid)
 L <- split(mygrid, mygrid$group)
 edges <- sapply(L, function(x) {
   points <- x |> st_union() |> st_simplify() |> st_cast("LINESTRING")
@@ -40,3 +41,4 @@ edges <- sapply(L, function(x) {
 })
 (sapply(L, nrow) * edges) |> sum()
 
+lapply(L, function(x)  x |> st_union() |> st_simplify() |> st_cast("LINESTRING") |> st_as_sf()) |> dplyr::bind_rows() |> plot()
